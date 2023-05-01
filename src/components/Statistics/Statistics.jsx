@@ -27,7 +27,13 @@ export const Statistics = ({ title, stats }) => {
   );
 };
 
-Statistics.propTypes = {
-    label: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
-};
+Statistics.propTypes ={
+  title: PropTypes.string,
+  stats: PropTypes.arrayOf(
+    PropTypes.exact({
+      label: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired
+  };
